@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+
+  --color-ink: #14100e;
+  --color-charcoal: #1e1916;
+  --color-mocha: #2c231e;
+  --color-cream: #f8f3ec;
+  --color-sand: #efe5d6;
+  --color-blush: #e4cfc1;
+  --color-gold: #b0843f;
+  --color-gold-light: #cdaa70;
+  --color-muted: #8a7d70;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+.nabila-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.nabila-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nabila-scroll::-webkit-scrollbar-thumb {
+  background: #cdaa70;
+  border-radius: 999px;
+}
+
+@keyframes nabila-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: nabila-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes nabila-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: nabila-marquee 28s linear infinite;
+}
+
+@keyframes nabila-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-zoom {
+  animation: nabila-zoom 7s ease-out both;
+}
